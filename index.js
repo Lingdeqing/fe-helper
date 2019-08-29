@@ -11,7 +11,9 @@ async function packageJson(key, value) {
   const filepath = 'package.json';
   const json = await fs.readJson(filepath);
   json[key] = value;
-  await fs.outputJSON(filepath);
+  await fs.outputJSON(filepath, json, {
+    spaces: 2
+  });
 }
 
 async function task() {
