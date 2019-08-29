@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "前端代码检查配置",
   "main": "index.js",
+  "bin": "index.js",
   "files": [
     "index.js"
   ],

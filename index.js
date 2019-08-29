@@ -1,15 +1,17 @@
-// Mrm module to work with new line separated text files
-// const { lines } = require('mrm-core');
+const { json, lines, packageJson, install } = require('mrm-core')
  
 function task() {
-  // Read .gitignore if it exists
-//   lines('.gitignore')
-//     // Add lines that do not exist in a file yet,
-//     // but keep all existing lines
-//     .add(['node_modules/', '.DS_Store'])
-//     // Update or create a file
-//     .save();
+  // 安装依赖
+  const packages = 'eslint-config-standard eslint-plugin-standard eslint-plugin-import eslint-plugin-node eslint-plugin-promise'.split(' ')
+  install(packages)
+
+  // .eslintrc
+
+  // .eslintignore
+
+  // package.json
+
+  // Install dependencies
 }
  
-task.description = 'test mrm task';
-module.exports = task;
+task();
