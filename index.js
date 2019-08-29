@@ -14,7 +14,7 @@ async function packageJson(key, value) {
   await fs.outputJSON(filepath);
 }
 
-function task() {
+async function task() {
   // 安装依赖
   await execa.shell(`npm i -D eslint@5.16.0 babel-eslint prettier pretty-quick eslint-config-prettier eslint-plugin-prettier \
   eslint-config-standard eslint-plugin-standard eslint-plugin-import eslint-plugin-node eslint-plugin-promise \
