@@ -4,9 +4,7 @@ const path = require('path');
 const codeCheckDir = __dirname;
 
 async function copyFile(filename) {
-  console.log('process cwd: ', process.cwd())
-  console.log('拷贝文件: '+path.resolve(codeCheckDir, filename) + ', to: '+ filename);
-  // await fs.copy(path.resolve(codeCheckDir, filename), filename);
+  await fs.copy(path.resolve(codeCheckDir, filename), filename);
 }
 
 async function packageJson(key, value) {
@@ -53,4 +51,7 @@ async function task() {
   )
 }
 
-task();
+const args = process.argv.slice(2);
+if(args[1] === '--init'){
+  task();
+}
