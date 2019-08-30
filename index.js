@@ -5,8 +5,8 @@ const fs = require('fs-extra');
 const path = require('path');
 const codeCheckDir = __dirname;
 
-async function copyFile(filename) {
-  await fs.copy(path.resolve(codeCheckDir, filename), filename);
+async function copyFile(framework, filename) {
+  await fs.copy(path.resolve(codeCheckDir, `${framework}/${filename}`), filename);
 }
 
 async function packageJson(key, value) {
@@ -18,19 +18,19 @@ async function packageJson(key, value) {
   });
 }
 
-async function task() {
+async function task(framework) {
   // 安装依赖
-  await execa.shell(`npm i -D eslint@5.16.0 babel-eslint prettier pretty-quick eslint-config-prettier eslint-plugin-prettier \
+  await execa.shell(`npm i -D prettier pretty-quick eslint-config-prettier eslint-plugin-prettier \
   eslint-config-standard eslint-plugin-standard eslint-plugin-import eslint-plugin-node eslint-plugin-promise \
   husky  lint-staged `, {
       stdio: 'inherit',
     });
 
   // 拷贝配置文件
-  await copyFile('.eslintrc.js');
-  await copyFile('.eslintignore');
-  await copyFile('.prettierrc.js');
-  await copyFile('.prettierignore');
+  await copyFile(framework, '.eslintrc.js');
+  await copyFile(framework, '.eslintignore');
+  await copyFile(framework, '.prettierrc.js');
+  await copyFile(framework, '.prettierignore');
 
   //修改package.json文件
   await packageJson(
@@ -55,5 +55,5 @@ async function task() {
 
 const args = process.argv.slice(2);
 if(args[0] === '--init'){
-  task();
+  task('react');
 }
