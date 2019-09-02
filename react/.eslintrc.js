@@ -16,6 +16,7 @@ module.exports = {
   },
   rules: {
     "react/prop-types": 0,
-    "no-return-assign": 0
+    "no-return-assign": 0,
+    "no-new": 0
   }
 };
