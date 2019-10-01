@@ -54,6 +54,10 @@ async function task(framework) {
       "*": "pretty-quick --staged"
     }
   )
+  await packageJson(
+    "fix",
+    `eslint "src/**/*.@(vue|js|jsx)"  --fix && prettier "src/**/*.@(c|le|sc)ss"  --write`
+  )
 }
 
 async function vueInit() {
@@ -86,6 +90,10 @@ async function vueInit() {
       ],
       "*": "pretty-quick --staged"
     }
+  )
+  await packageJson(
+    "fix",
+    `eslint "src/**/*.@(vue|js|jsx)"  --fix && prettier "src/**/*.@(c|le|sc)ss"  --write`
   )
 
 }
