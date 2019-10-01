@@ -12,10 +12,17 @@ async function copyFile(framework, filename) {
   await fs.copy(path.resolve(codeCheckDir, `${framework}/${filename}`), filename);
 }
 
-async function packageJson(key, value) {
+async function packageJson(key, value, cli) {
   const filepath = 'package.json';
   const json = await fs.readJson(filepath);
-  json[key] = value;
+  if(cli){
+    json.scripts = {
+      ...(json.scripts || {}),
+      [value]: cli
+    }
+  } else {
+    json[key] = value;
+  }
   await fs.outputJSON(filepath, json, {
     spaces: 2
   });
@@ -55,6 +62,7 @@ async function task(framework) {
     }
   )
   await packageJson(
+    "scripts",
     "fix",
     `eslint "src/**/*.@(vue|js|jsx)"  --fix && prettier "src/**/*.@(c|le|sc)ss"  --write`
   )
@@ -92,6 +100,7 @@ async function vueInit() {
     }
   )
   await packageJson(
+    "scripts",
     "fix",
     `eslint "src/**/*.@(vue|js|jsx)"  --fix && prettier "src/**/*.@(c|le|sc)ss"  --write`
   )
