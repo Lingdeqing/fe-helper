@@ -12,6 +12,10 @@ npx code_check react
 ```
 npx code_check vue
 ```
+## for default
+```
+npx code_check
+```
 
 ## how to fix
 ```

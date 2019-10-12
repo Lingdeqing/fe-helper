@@ -112,4 +112,6 @@ if (args[0] === 'react') {
   task('react');
 } else if (args[0] === 'vue') {
   vueInit();
+} else {
+  task('default');
 }
