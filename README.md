@@ -59,7 +59,10 @@ npm run fix
 ```
 # webstorm2019.1
 1. 打开eslint
-![这里写图片描述](http://...)
+![打开eslint](http://v9.git.n.xiaomi.com/miot-fe-arch/code-check/raw/master/doc/imgs/1571898895582.jpg)
 2. 设置eslint fix快捷键
+![设置eslint fix快捷键](http://v9.git.n.xiaomi.com/miot-fe-arch/code-check/raw/master/doc/imgs/1571898842038.jpg)
 3. 录制宏 先按eslint fix快捷键(shift+command+;) 再按保存快捷键(command+s) 保存宏命名宏叫eslint fix save
+![录制宏](http://v9.git.n.xiaomi.com/miot-fe-arch/code-check/raw/master/doc/imgs/hong.jpg)
 4. 设置宏快捷键为(command+s)
+![设置宏快捷键为(command+s)](http://v9.git.n.xiaomi.com/miot-fe-arch/code-check/raw/master/doc/imgs/hong2.jpg)
