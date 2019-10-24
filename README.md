@@ -57,3 +57,9 @@ npm run fix
     ]
 }
 ```
+# webstorm2019.1
+1. 打开eslint
+![这里写图片描述](http://...)
+2. 设置eslint fix快捷键
+3. 录制宏 先按eslint fix快捷键(shift+command+;) 再按保存快捷键(command+s) 保存宏命名宏叫eslint fix save
+4. 设置宏快捷键为(command+s)
